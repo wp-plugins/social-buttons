@@ -21,7 +21,13 @@ define('APSB_REGEXP', '%\[SB (.+)\]%i');
  * DIGG: http://digg.com/tools/integrate
  * REDDIT: http://reddit.com/buttons
  * DELICIOUS: http://del.icio.us/help/savebuttons
+ * DZONE: http://www.dzone.com/links/buttons.jsp
+ * STUMBLE UPON: http://www.stumbleupon.com/buttons.php?pgtype=blog
  * 
+ * TODO
+ * - Have configurable button text/images.
+ * - Pass descriptions through for some buttons.
+ *
  */
 function sb_make_button($type, $url, $title)
 {
@@ -44,6 +50,21 @@ function sb_make_button($type, $url, $title)
 			break;
 		case 'delicious':
 			$button = "<a href='http://del.icio.us/post' onclick=\"window.open('http://del.icio.us/post?v=4&noui&jump=close&url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title), 'delicious','toolbar=no,width=700,height=400'); return false;\">Save To Delicious</a>";
+			break;
+		case 'dzone':
+		case 'dzone1':
+		case 'dzone2':
+		  list($version) = sscanf($type, 'dzone%d');
+			if (!$version) $version = 1;
+			$button = "<script type='text/javascript'>var dzone_url = '$url';</script>";
+			$button += "<script type='text/javascript'>var dzone_title = '$title';</script>";
+			// <script type="text/javascript">var dzone_blurb = '[description]';</script>
+			$button += "<script type='text/javascript'>var dzone_style = '$version';</script>";
+			$button += "<script language='javascript' src='http://widgets.dzone.com/widgets/zoneit.js'></script>";
+			break;
+		case 'stumble':
+		case 'stumbleupon':
+			$button = "<a href=\"http://www.stumbleupon.com/submit?url=$url&title=$title">Stumble it!</a>";
 			break;
 		default:
 			$button = null;

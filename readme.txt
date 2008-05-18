@@ -1,7 +1,7 @@
 === Social Buttons ===
 Contributors: alexpooley
-Tags: social networks, digg, reddit, delicious, sphinn
-Stable tag: 1.0
+Tags: social networks, digg, reddit, delicious, sphinn, dzone, stumbleupon
+Stable tag: 1.1
 Tested up to: 2.2.5
 Requires at least: 2.0.2
 Donate link: http://www.alexpooley.com
@@ -23,10 +23,12 @@ to accomplish this.
 You may place as many buttons, in as many places in your posts as you like.
 
 This plugin handles:
-* Digg
-* Reddit (button styles 1, 2, 3)
-* Delicious
-* Sphinn
+- Digg
+- Reddit (all button styles)
+- Delicious
+- Sphinn
+- Dzone (all button styles)
+- StumbleUpon
 
 = For Your Posts =
 
@@ -42,13 +44,18 @@ Here's an example post...
 -----------------------------------------------------
 
 The different button types are:
-* digg
-* delicious
-* reddit
-* reddit1 (same as reddit)
-* reddit2
-* reddit3
-* sphinn
+- digg
+- delicious
+- reddit
+- reddit1 (same as reddit)
+- reddit2
+- reddit3
+- sphinn
+- dzone
+- dzone1 (same as dzone)
+- dzone2
+- stumbleupon
+- stumble (same as stumbleupon)
 
 
 = For Your Themes =
@@ -63,10 +70,8 @@ This section describes how to install the plugin and get it working.
 
 e.g.
 
-1. Upload `plugin-name.php` to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Place `<?php do_action('plugin_name_hook'); ?>` in your templates
-
+1. Upload `social-buttons.php` to the `/wp-content/plugins/` directory
+2. Activate the plugin through the 'Plugins' menu in WordPress
 
 There are so many other social networks that I could add to this plugin. If you want something
 added then please contact me through [my blog](http://www.alexpooley.com "Freelance Web Developer").
@@ -79,5 +84,4 @@ Please feel free to ask questions by contacting me through my blog.
 
 == Screenshots ==
 
-1. here's a screenshot.
-
+1. You can see examples on my blog post that announced the plugin: [http://www.alexpooley.com/2008/05/09/release-social-buttons-wordpress-plugin/](http://www.alexpooley.com/2008/05/09/release-social-buttons-wordpress-plugin/)
