@@ -57,14 +57,14 @@ function sb_make_button($type, $url, $title)
 		  list($version) = sscanf($type, 'dzone%d');
 			if (!$version) $version = 1;
 			$button = "<script type='text/javascript'>var dzone_url = '$url';</script>";
-			$button += "<script type='text/javascript'>var dzone_title = '$title';</script>";
-			// <script type="text/javascript">var dzone_blurb = '[description]';</script>
-			$button += "<script type='text/javascript'>var dzone_style = '$version';</script>";
-			$button += "<script language='javascript' src='http://widgets.dzone.com/widgets/zoneit.js'></script>";
+			$button .= "<script type='text/javascript'>var dzone_title = '$title';</script>";
+			# <script type="text/javascript">var dzone_blurb = '[description]';</script>
+			$button .= "<script type='text/javascript'>var dzone_style = '$version';</script>";
+			$button .= "<script language='javascript' src='http://widgets.dzone.com/widgets/zoneit.js'></script>";
 			break;
 		case 'stumble':
 		case 'stumbleupon':
-			$button = "<a href=\"http://www.stumbleupon.com/submit?url=$url&title=$title">Stumble it!</a>";
+			$button = "<a href=\"http://www.stumbleupon.com/submit?url=$url&title=$title\">Stumble it!</a>";
 			break;
 		default:
 			$button = null;
@@ -98,7 +98,6 @@ function ap_process_sb_tag($content)
 	$content = preg_replace_callback(APSB_REGEXP, 'ap_process_sb_tag_callback', $content);
 	return ($content);
 }
-
 
 
 add_filter('single_post_title', 'ap_process_sb_tag');
