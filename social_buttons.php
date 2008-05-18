@@ -100,7 +100,6 @@ function ap_process_sb_tag($content)
 }
 
 
-
 add_filter('single_post_title', 'ap_process_sb_tag');
 add_filter('the_content', 'ap_process_sb_tag');
 add_filter('the_content_rss', 'ap_process_sb_tag');
