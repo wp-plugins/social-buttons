@@ -49,7 +49,7 @@ function sb_make_button($type, $url, $title)
 			$button = "<script>reddit_url='$url'; reddit_title='$title';</script><script type='text/javascript' src='http://reddit.com/button.js?t=$version'></script>";
 			break;
 		case 'delicious':
-			$button = "<a href='http://del.icio.us/post' onclick=\"window.open('http://del.icio.us/post?v=4&noui&jump=close&url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title), 'delicious','toolbar=no,width=700,height=400'); return false;\">Save To Delicious</a>";
+			$button = "<a href='http://del.icio.us/post' onclick=\"window.open('http://del.icio.us/post?v=4&noui&jump=close&url='+encodeURIComponent('$url')+'&title='+encodeURIComponent('$title'), 'delicious','toolbar=no,width=700,height=400'); return false;\">Save To Delicious</a>";
 			break;
 		case 'dzone':
 		case 'dzone1':
